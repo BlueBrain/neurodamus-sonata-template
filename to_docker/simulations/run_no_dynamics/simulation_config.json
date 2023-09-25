@@ -23,8 +23,8 @@
         "output_dir": "/mnt/mydata/simulations/run_no_dynamics"
     },
     "inputs": {
-        "ThresholdIntoMosaic": {
-            "node_set": "Mosaic",
+        "InjectAbsCurrent": {
+            "node_set": "All",
             "input_type": "current_clamp",
             "module": "noise",
             "mean": 0.25,

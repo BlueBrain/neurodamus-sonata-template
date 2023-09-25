@@ -9,9 +9,9 @@ Hippocampus use case:
 
 3. to undertand the contents of nodes_template.h5 run:
 
-`h5ls -rd nodes_template.h5`
+`h5ls -rd nodes_correct.h5`
 
-which will give the tree of hdf5 file with the values. We want to modify
+which will give the tree of hdf5 file with the values we want to obtain from nodes_to_change.h5. We want to modify
 model_template and morphology for node population 'popA/0' 
 
 ```
@@ -27,10 +27,10 @@ model_template and morphology for node population 'popA/0'
 4. Then we can specify which morphology and emodel to overwrite using the script. First lets copy the template.
 
 ```
-cp nodes_template.h5 nodes_modified.h5
+cp nodes_to_change.h5 nodes_modified.h5
 ```
 
-Now we will use update_nodes.py to modify nodes.h5's contents
+Now we will use update_nodes.py to modify nodes_modified.h5's contents
 
 The first argument is to give node file to edit, then we give one by one the dataset field to change and the value we want it to be.
 
@@ -42,8 +42,9 @@ which translates into:
 
 Use this nodes.h5 file in circuit directory. Better to copy it there.
 
-`cp nodes_modified ../circuit/nodes.h5`
+`cp nodes_modified.h5 ../circuit/nodes.h5`
 
+or you can make a symbolic link in order not to duplicate files
 
 5. Now we follow the instructions in neurodamus to pull its docker image, compile our mod files and run the simulation
 

@@ -7,9 +7,7 @@ Hippocampus use case:
 1. clone this repo
 2. go to to_docker/manipulate_nodes directory
 
-to undertand the contents of nodes_template.h5
-
-3. run
+3. to undertand the contents of nodes_template.h5 run:
 
 `h5ls -rd nodes_template.h5`
 
@@ -26,15 +24,25 @@ model_template and morphology for node population 'popA/0'
          "dend-050921AM2_axon-mpg141017_a1-2_idC"
 ```
 
-4. Then use this nodes.h5 file in circuit directory. Better to copy it there.
+4. Then we can specify which morphology and emodel to overwrite using the script. First lets copy the template.
 
 ```
 cp nodes_template.h5 nodes_modified.h5
-python update_nodes.py nodes_modified.h5
-cp nodes_modified ../circuit/nodes.h5
 ```
 
-Note: Familiarize yourself with the structure of SONATA circuits.
+Now we will use update_nodes.py to modify nodes.h5's contents
+
+The first argument is to give node file to edit, then we give one by one the dataset field to change and the value we want it to be.
+
+`python update_nodes.py {nodes_file} {hdf5_path_to_dataset} {new_value} {hdf5_path_to_dataset2} {new_value2}`
+
+which translates into:
+
+`python update_nodes.py nodes_modified.h5 /nodes/popA/0/model_template hoc:CA1_pyr_cACpyr_mpg141017_a1_2_idC_2019032814340 /nodes/popA/0/morphology dend-050921AM2_axon-mpg141017_a1-2_idC`
+
+Use this nodes.h5 file in circuit directory. Better to copy it there.
+
+`cp nodes_modified ../circuit/nodes.h5`
 
 
 5. Now we follow the instructions in neurodamus to pull its docker image, compile our mod files and run the simulation

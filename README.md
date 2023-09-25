@@ -1,6 +1,6 @@
 # neurodamus-sonata-template
 Template with minimal SONATA circuit with 1 neuron morphology and emodel to be tested with neurodamus docker image
-
+----
 
 Hippocampus use case:
 
@@ -84,3 +84,17 @@ Useful Links:
 1. Neurodamus Docker: https://github.com/BlueBrain/neurodamus/tree/main/docker
 2. BBP mod files : https://bbpgitlab.epfl.ch/hpc/sim/models
 
+Note:
+Docker container itself doesnt have vim or bluepysnap so those should be installed separately.
+
+```
+apt-get update
+apt-get install vim
+
+python -mvenv venv
+source venv/bin/activate
+pip install bluepysnap
+```
+
+
+then you can use the snap soma report visualization under simulations/

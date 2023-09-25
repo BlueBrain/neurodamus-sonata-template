@@ -24,18 +24,11 @@
     },
     "inputs": {
         "ThresholdIntoMosaic": {
-            "node_set": "All",
+            "node_set": "Mosaic",
             "input_type": "current_clamp",
             "module": "noise",
-            "mean_percent": 120.0,
+            "mean": 0.25,
             "variance": 0.0,
-            "delay": 300.0,
-            "duration": 100.0
-        },
-        "hypamp_mosaic": {
-            "node_set": "All",
-            "input_type": "current_clamp",
-            "module": "hyperpolarizing",
             "delay": 300.0,
             "duration": 100.0
         }

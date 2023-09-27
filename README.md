@@ -54,7 +54,7 @@ will give us the docker image
 
 you can check if it is there with `docker image ls`
 
-6. Then we mount our files into docker which we put before in to_docker/
+6. Then we mount our files into docker which we put before in to_docker/ . Put the absolute path for to_docker and not the relative path.
 
 `docker run --rm -it -v full/path/to/to_docker:/mnt/mydata bluebrain/neurodamus`
 

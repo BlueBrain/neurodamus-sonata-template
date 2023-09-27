@@ -74,7 +74,7 @@ this will create a new folder x86_64/ under mnt/mydata. Then we run:
 
 8. Once it compiles the mod files and we export its path to HOC_LIBRARY_PATH, we can run the simulation from mnt/mydata/ directory:
 
-`/x86_64/special -mpi -python $NEURODAMUS_PYTHON/init.py --configFile=simulations/run_no_dynamics/simulation_config.json`
+`./x86_64/special -mpi -python $NEURODAMUS_PYTHON/init.py --configFile=simulations/run_no_dynamics/simulation_config.json`
 
 
 Then results will be under simulations/run_no_dynamics

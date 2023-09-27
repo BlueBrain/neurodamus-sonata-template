@@ -1,0 +1,752 @@
+./ALU.cpp: ../hippocampus/mod//ALU.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ALU.mod" -o "/mnt/mydata/x86_64")
+
+./ALU.o: ./ALU.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./CoreNEURONArtificialCell.cpp: ../hippocampus/mod//CoreNEURONArtificialCell.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "CoreNEURONArtificialCell.mod" -o "/mnt/mydata/x86_64")
+
+./CoreNEURONArtificialCell.o: ./CoreNEURONArtificialCell.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./DetAMPANMDA.cpp: ../hippocampus/mod//DetAMPANMDA.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "DetAMPANMDA.mod" -o "/mnt/mydata/x86_64")
+
+./DetAMPANMDA.o: ./DetAMPANMDA.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./DetGABAAB.cpp: ../hippocampus/mod//DetGABAAB.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "DetGABAAB.mod" -o "/mnt/mydata/x86_64")
+
+./DetGABAAB.o: ./DetGABAAB.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./GluSynapse.cpp: ../hippocampus/mod//GluSynapse.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "GluSynapse.mod" -o "/mnt/mydata/x86_64")
+
+./GluSynapse.o: ./GluSynapse.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./HDF5reader.cpp: ../hippocampus/mod//HDF5reader.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "HDF5reader.mod" -o "/mnt/mydata/x86_64")
+
+./HDF5reader.o: ./HDF5reader.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Im_ms.cpp: ../hippocampus/mod//Im_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Im_ms.mod" -o "/mnt/mydata/x86_64")
+
+./Im_ms.o: ./Im_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./NO.cpp: ../hippocampus/mod//NO.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "NO.mod" -o "/mnt/mydata/x86_64")
+
+./NO.o: ./NO.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ProbAMPANMDA_EMS.cpp: ../hippocampus/mod//ProbAMPANMDA_EMS.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ProbAMPANMDA_EMS.mod" -o "/mnt/mydata/x86_64")
+
+./ProbAMPANMDA_EMS.o: ./ProbAMPANMDA_EMS.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ProbGABAAB_EMS.cpp: ../hippocampus/mod//ProbGABAAB_EMS.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ProbGABAAB_EMS.mod" -o "/mnt/mydata/x86_64")
+
+./ProbGABAAB_EMS.o: ./ProbGABAAB_EMS.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SonataReportHelper.cpp: ../hippocampus/mod//SonataReportHelper.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SonataReportHelper.mod" -o "/mnt/mydata/x86_64")
+
+./SonataReportHelper.o: ./SonataReportHelper.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SonataReports.cpp: ../hippocampus/mod//SonataReports.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SonataReports.mod" -o "/mnt/mydata/x86_64")
+
+./SonataReports.o: ./SonataReports.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SpikeWriter.cpp: ../hippocampus/mod//SpikeWriter.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SpikeWriter.mod" -o "/mnt/mydata/x86_64")
+
+./SpikeWriter.o: ./SpikeWriter.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SynapseReader.cpp: ../hippocampus/mod//SynapseReader.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SynapseReader.mod" -o "/mnt/mydata/x86_64")
+
+./SynapseReader.o: ./SynapseReader.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./TTXDynamicsSwitch.cpp: ../hippocampus/mod//TTXDynamicsSwitch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "TTXDynamicsSwitch.mod" -o "/mnt/mydata/x86_64")
+
+./TTXDynamicsSwitch.o: ./TTXDynamicsSwitch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./VecStim.cpp: ../hippocampus/mod//VecStim.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "VecStim.mod" -o "/mnt/mydata/x86_64")
+
+./VecStim.o: ./VecStim.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./bk_ch.cpp: ../hippocampus/mod//bk_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "bk_ch.mod" -o "/mnt/mydata/x86_64")
+
+./bk_ch.o: ./bk_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./bk_fs.cpp: ../hippocampus/mod//bk_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "bk_fs.mod" -o "/mnt/mydata/x86_64")
+
+./bk_fs.o: ./bk_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./bk_ms.cpp: ../hippocampus/mod//bk_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "bk_ms.mod" -o "/mnt/mydata/x86_64")
+
+./bk_ms.o: ./bk_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ca_ch.cpp: ../hippocampus/mod//ca_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ca_ch.mod" -o "/mnt/mydata/x86_64")
+
+./ca_ch.o: ./ca_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cacumm.cpp: ../hippocampus/mod//cacumm.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cacumm.mod" -o "/mnt/mydata/x86_64")
+
+./cacumm.o: ./cacumm.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cacummb.cpp: ../hippocampus/mod//cacummb.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cacummb.mod" -o "/mnt/mydata/x86_64")
+
+./cacummb.o: ./cacummb.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cadyn_fs.cpp: ../hippocampus/mod//cadyn_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cadyn_fs.mod" -o "/mnt/mydata/x86_64")
+
+./cadyn_fs.o: ./cadyn_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cadyn_ms.cpp: ../hippocampus/mod//cadyn_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cadyn_ms.mod" -o "/mnt/mydata/x86_64")
+
+./cadyn_ms.o: ./cadyn_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cagk.cpp: ../hippocampus/mod//cagk.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cagk.mod" -o "/mnt/mydata/x86_64")
+
+./cagk.o: ./cagk.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cal12_ms.cpp: ../hippocampus/mod//cal12_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cal12_ms.mod" -o "/mnt/mydata/x86_64")
+
+./cal12_ms.o: ./cal12_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cal13_ms.cpp: ../hippocampus/mod//cal13_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cal13_ms.mod" -o "/mnt/mydata/x86_64")
+
+./cal13_ms.o: ./cal13_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cal2.cpp: ../hippocampus/mod//cal2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cal2.mod" -o "/mnt/mydata/x86_64")
+
+./cal2.o: ./cal2.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cal_ch.cpp: ../hippocampus/mod//cal_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cal_ch.mod" -o "/mnt/mydata/x86_64")
+
+./cal_ch.o: ./cal_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./caldyn_ms.cpp: ../hippocampus/mod//caldyn_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "caldyn_ms.mod" -o "/mnt/mydata/x86_64")
+
+./caldyn_ms.o: ./caldyn_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./can2.cpp: ../hippocampus/mod//can2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "can2.mod" -o "/mnt/mydata/x86_64")
+
+./can2.o: ./can2.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./can_fs.cpp: ../hippocampus/mod//can_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "can_fs.mod" -o "/mnt/mydata/x86_64")
+
+./can_fs.o: ./can_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./can_ms.cpp: ../hippocampus/mod//can_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "can_ms.mod" -o "/mnt/mydata/x86_64")
+
+./can_ms.o: ./can_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cap_ch.cpp: ../hippocampus/mod//cap_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cap_ch.mod" -o "/mnt/mydata/x86_64")
+
+./cap_ch.o: ./cap_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./caq_fs.cpp: ../hippocampus/mod//caq_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "caq_fs.mod" -o "/mnt/mydata/x86_64")
+
+./caq_fs.o: ./caq_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./caq_ms.cpp: ../hippocampus/mod//caq_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "caq_ms.mod" -o "/mnt/mydata/x86_64")
+
+./caq_ms.o: ./caq_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./car_fs.cpp: ../hippocampus/mod//car_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "car_fs.mod" -o "/mnt/mydata/x86_64")
+
+./car_fs.o: ./car_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./car_ms.cpp: ../hippocampus/mod//car_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "car_ms.mod" -o "/mnt/mydata/x86_64")
+
+./car_ms.o: ./car_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cat.cpp: ../hippocampus/mod//cat.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cat.mod" -o "/mnt/mydata/x86_64")
+
+./cat.o: ./cat.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cat32_ms.cpp: ../hippocampus/mod//cat32_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cat32_ms.mod" -o "/mnt/mydata/x86_64")
+
+./cat32_ms.o: ./cat32_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./cat33_ms.cpp: ../hippocampus/mod//cat33_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "cat33_ms.mod" -o "/mnt/mydata/x86_64")
+
+./cat33_ms.o: ./cat33_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./gap.cpp: ../hippocampus/mod//gap.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "gap.mod" -o "/mnt/mydata/x86_64")
+
+./gap.o: ./gap.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./h.cpp: ../hippocampus/mod//h.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "h.mod" -o "/mnt/mydata/x86_64")
+
+./h.o: ./h.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./hcn12_ch.cpp: ../hippocampus/mod//hcn12_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "hcn12_ch.mod" -o "/mnt/mydata/x86_64")
+
+./hcn12_ch.o: ./hcn12_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./hd_lts.cpp: ../hippocampus/mod//hd_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "hd_lts.mod" -o "/mnt/mydata/x86_64")
+
+./hd_lts.o: ./hd_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./im_lts.cpp: ../hippocampus/mod//im_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "im_lts.mod" -o "/mnt/mydata/x86_64")
+
+./im_lts.o: ./im_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./it_lts.cpp: ../hippocampus/mod//it_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "it_lts.mod" -o "/mnt/mydata/x86_64")
+
+./it_lts.o: ./it_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kadist.cpp: ../hippocampus/mod//kadist.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kadist.mod" -o "/mnt/mydata/x86_64")
+
+./kadist.o: ./kadist.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kaf_fs.cpp: ../hippocampus/mod//kaf_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kaf_fs.mod" -o "/mnt/mydata/x86_64")
+
+./kaf_fs.o: ./kaf_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kaf_lts.cpp: ../hippocampus/mod//kaf_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kaf_lts.mod" -o "/mnt/mydata/x86_64")
+
+./kaf_lts.o: ./kaf_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kaf_ms.cpp: ../hippocampus/mod//kaf_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kaf_ms.mod" -o "/mnt/mydata/x86_64")
+
+./kaf_ms.o: ./kaf_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kaprox.cpp: ../hippocampus/mod//kaprox.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kaprox.mod" -o "/mnt/mydata/x86_64")
+
+./kaprox.o: ./kaprox.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kas_fs.cpp: ../hippocampus/mod//kas_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kas_fs.mod" -o "/mnt/mydata/x86_64")
+
+./kas_fs.o: ./kas_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kas_ms.cpp: ../hippocampus/mod//kas_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kas_ms.mod" -o "/mnt/mydata/x86_64")
+
+./kas_ms.o: ./kas_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kca.cpp: ../hippocampus/mod//kca.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kca.mod" -o "/mnt/mydata/x86_64")
+
+./kca.o: ./kca.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kcnq_ch.cpp: ../hippocampus/mod//kcnq_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kcnq_ch.mod" -o "/mnt/mydata/x86_64")
+
+./kcnq_ch.o: ./kcnq_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kd.cpp: ../hippocampus/mod//kd.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kd.mod" -o "/mnt/mydata/x86_64")
+
+./kd.o: ./kd.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kd2.cpp: ../hippocampus/mod//kd2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kd2.mod" -o "/mnt/mydata/x86_64")
+
+./kd2.o: ./kd2.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdb.cpp: ../hippocampus/mod//kdb.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdb.mod" -o "/mnt/mydata/x86_64")
+
+./kdb.o: ./kdb.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdb_lts.cpp: ../hippocampus/mod//kdb_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdb_lts.mod" -o "/mnt/mydata/x86_64")
+
+./kdb_lts.o: ./kdb_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdr_fs.cpp: ../hippocampus/mod//kdr_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdr_fs.mod" -o "/mnt/mydata/x86_64")
+
+./kdr_fs.o: ./kdr_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdr_lts.cpp: ../hippocampus/mod//kdr_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdr_lts.mod" -o "/mnt/mydata/x86_64")
+
+./kdr_lts.o: ./kdr_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdr_ms.cpp: ../hippocampus/mod//kdr_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdr_ms.mod" -o "/mnt/mydata/x86_64")
+
+./kdr_ms.o: ./kdr_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdrb_lts.cpp: ../hippocampus/mod//kdrb_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdrb_lts.mod" -o "/mnt/mydata/x86_64")
+
+./kdrb_lts.o: ./kdrb_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdrbca1.cpp: ../hippocampus/mod//kdrbca1.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdrbca1.mod" -o "/mnt/mydata/x86_64")
+
+./kdrbca1.o: ./kdrbca1.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdrca1.cpp: ../hippocampus/mod//kdrca1.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdrca1.mod" -o "/mnt/mydata/x86_64")
+
+./kdrca1.o: ./kdrca1.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kir23_ch.cpp: ../hippocampus/mod//kir23_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kir23_ch.mod" -o "/mnt/mydata/x86_64")
+
+./kir23_ch.o: ./kir23_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kir23_lts.cpp: ../hippocampus/mod//kir23_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kir23_lts.mod" -o "/mnt/mydata/x86_64")
+
+./kir23_lts.o: ./kir23_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kir2_ch.cpp: ../hippocampus/mod//kir2_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kir2_ch.mod" -o "/mnt/mydata/x86_64")
+
+./kir2_ch.o: ./kir2_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kir_fs.cpp: ../hippocampus/mod//kir_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kir_fs.mod" -o "/mnt/mydata/x86_64")
+
+./kir_fs.o: ./kir_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kir_ms.cpp: ../hippocampus/mod//kir_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kir_ms.mod" -o "/mnt/mydata/x86_64")
+
+./kir_ms.o: ./kir_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./km.cpp: ../hippocampus/mod//km.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "km.mod" -o "/mnt/mydata/x86_64")
+
+./km.o: ./km.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kmb.cpp: ../hippocampus/mod//kmb.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kmb.mod" -o "/mnt/mydata/x86_64")
+
+./kmb.o: ./kmb.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kv2_ch.cpp: ../hippocampus/mod//kv2_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kv2_ch.mod" -o "/mnt/mydata/x86_64")
+
+./kv2_ch.o: ./kv2_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kv4_ch.cpp: ../hippocampus/mod//kv4_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kv4_ch.mod" -o "/mnt/mydata/x86_64")
+
+./kv4_ch.o: ./kv4_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./lookupTableV2.cpp: ../hippocampus/mod//lookupTableV2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "lookupTableV2.mod" -o "/mnt/mydata/x86_64")
+
+./lookupTableV2.o: ./lookupTableV2.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./na2_ch.cpp: ../hippocampus/mod//na2_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "na2_ch.mod" -o "/mnt/mydata/x86_64")
+
+./na2_ch.o: ./na2_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./na3_lts.cpp: ../hippocampus/mod//na3_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "na3_lts.mod" -o "/mnt/mydata/x86_64")
+
+./na3_lts.o: ./na3_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./na3n.cpp: ../hippocampus/mod//na3n.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "na3n.mod" -o "/mnt/mydata/x86_64")
+
+./na3n.o: ./na3n.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./na_ch.cpp: ../hippocampus/mod//na_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "na_ch.mod" -o "/mnt/mydata/x86_64")
+
+./na_ch.o: ./na_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./naf_fs.cpp: ../hippocampus/mod//naf_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "naf_fs.mod" -o "/mnt/mydata/x86_64")
+
+./naf_fs.o: ./naf_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./naf_lts.cpp: ../hippocampus/mod//naf_lts.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "naf_lts.mod" -o "/mnt/mydata/x86_64")
+
+./naf_lts.o: ./naf_lts.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./naf_ms.cpp: ../hippocampus/mod//naf_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "naf_ms.mod" -o "/mnt/mydata/x86_64")
+
+./naf_ms.o: ./naf_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./naxn.cpp: ../hippocampus/mod//naxn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "naxn.mod" -o "/mnt/mydata/x86_64")
+
+./naxn.o: ./naxn.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./netstim_inhpoisson.cpp: ../hippocampus/mod//netstim_inhpoisson.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "netstim_inhpoisson.mod" -o "/mnt/mydata/x86_64")
+
+./netstim_inhpoisson.o: ./netstim_inhpoisson.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./par_ggap.cpp: ../hippocampus/mod//par_ggap.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "par_ggap.mod" -o "/mnt/mydata/x86_64")
+
+./par_ggap.o: ./par_ggap.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./sk_ch.cpp: ../hippocampus/mod//sk_ch.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "sk_ch.mod" -o "/mnt/mydata/x86_64")
+
+./sk_ch.o: ./sk_ch.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./sk_fs.cpp: ../hippocampus/mod//sk_fs.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "sk_fs.mod" -o "/mnt/mydata/x86_64")
+
+./sk_fs.o: ./sk_fs.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./sk_ms.cpp: ../hippocampus/mod//sk_ms.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "sk_ms.mod" -o "/mnt/mydata/x86_64")
+
+./sk_ms.o: ./sk_ms.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./tmgabaa.cpp: ../hippocampus/mod//tmgabaa.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "tmgabaa.mod" -o "/mnt/mydata/x86_64")
+
+./tmgabaa.o: ./tmgabaa.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./tmglut.cpp: ../hippocampus/mod//tmglut.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "tmglut.mod" -o "/mnt/mydata/x86_64")
+
+./tmglut.o: ./tmglut.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./tmglut_M1RH_D1.cpp: ../hippocampus/mod//tmglut_M1RH_D1.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "tmglut_M1RH_D1.mod" -o "/mnt/mydata/x86_64")
+
+./tmglut_M1RH_D1.o: ./tmglut_M1RH_D1.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./tmglut_double.cpp: ../hippocampus/mod//tmglut_double.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "tmglut_double.mod" -o "/mnt/mydata/x86_64")
+
+./tmglut_double.o: ./tmglut_double.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./vecevent.cpp: ../hippocampus/mod//vecevent.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../hippocampus/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "vecevent.mod" -o "/mnt/mydata/x86_64")
+
+./vecevent.o: ./vecevent.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../hippocampus/mod" $(INCLUDES) -fPIC -c $< -o $@
+

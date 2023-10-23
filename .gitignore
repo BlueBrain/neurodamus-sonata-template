@@ -1,0 +1,23 @@
+# ignore all logs
+*.log
+to_docker/saved logs/
+
+#ignore plots
+*_trace.png
+to_docker/simulations/Selected plot/
+
+#ignore file automatically generated for the simulation
+to_docker/circuit/components/biophysical_neuron_models/.exception_node
+to_docker/simulations/run_no_dynamics/out.h5
+to_docker/simulations/run_no_dynamics/populations_offset.dat
+to_docker/simulations/run_no_dynamics/simulation_GC_config.json.SUCCESS
+to_docker/simulations/run_no_dynamics/simulation_MC_config.json.SUCCESS
+to_docker/simulations/run_no_dynamics/simulation_config.json.SUCCESS
+to_docker/simulations/run_no_dynamics/simulation_mTC_config.json.SUCCESS
+to_docker/x86_64/
+
+#ignore venv
+to_docker/venv/
+
+#ignore exception
+to_docker/.exception_node

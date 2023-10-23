@@ -255,11 +255,7 @@ proc biophys() {
   
   forsec CellRef.basal {
     gkdrbar_kdr = 0.0051140701369551591
-    gcalbar_cal = 1.3433464444108534e-06
-    gcanbar_can = 9.1375529468386047e-06
-    gcatbar_cat = 5.2627884427712998e-06
-    gbar_kca = 0.00011632706997854596
-    gbar_cagk = 3.8813989222985606e-05
+    gcalbar_cal =geom_nseg8813989222985606e-05
     gbar_nax = 0.0050344912419360861
     Ra = 196.53208992869335
     g_pas = 4.8328456800280221e-05

@@ -1,0 +1,44 @@
+{
+    "manifest": {
+        "$CURRENT_DIR": "/mnt/mydata/simulations/run_no_dynamics"
+    },
+    "run": {
+        "random_seed": 20,
+        "dt": 0.025,
+        "tstop": 500.0
+    },
+    "conditions": {
+        "extracellular_calcium": 2.0,
+        "mechanisms": {
+        }
+    },
+    "network": "/mnt/mydata/circuit/circuit_config.json",
+    "node_sets_file": "/mnt/mydata/circuit/node_sets.json",
+    "target_simulator": "NEURON",
+    "node_set": "All",
+    "output": {
+        "output_dir": "/mnt/mydata/simulations/run_no_dynamics"
+    },
+    "inputs": {
+        "InjectAbsCurrent": {
+            "node_set": "All",
+            "input_type": "current_clamp",
+            "module": "noise",
+            "mean": 2.42,
+            "variance": 0.0,
+            "delay": 300.0,
+            "duration": 100.0
+        }
+    },
+    "reports": {
+        "soma": {
+            "cells": "All",
+            "type": "compartment",
+            "variable_name": "v",
+            "unit": "mV",
+            "dt": 0.025,
+            "start_time": 0.0,
+            "end_time": 500.0
+        }
+    }
+}

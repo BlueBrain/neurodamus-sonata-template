@@ -203,7 +203,8 @@ proc insertChannel() {local tau, cap, Vrest
     tau = 20180
     cap = 1
                 
-    sh = 10
+    sh = 5
+    
   forsec this.all {
     insert kamt gbar_kamt=0.004
     insert nax gbar_nax=0.04 sh_nax=15-sh

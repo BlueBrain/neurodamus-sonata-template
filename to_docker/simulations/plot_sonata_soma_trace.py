@@ -1,4 +1,6 @@
 from bluepysnap import Simulation
+from matplotlib.ticker import AutoMinorLocator, MultipleLocator
+
 import matplotlib.pyplot as plt
 import sys
 
@@ -15,6 +17,10 @@ def check_integer(integer, arg):
         sim = Simulation('run_no_dynamics/simulation_GC_config.json')
         checker = True
         Ctype = "GC"
+    elif celltype=="3":
+        sim = Simulation('run_no_dynamics/simulation_mTC_config.json')
+        checker = True
+        Ctype = "mTC_MMmorph"
     else:
         if arg:
             print("Wrong value, no cell associated with this value. Please enter only 0, 1, or 2")
@@ -38,7 +44,12 @@ else:
     sim, checker, Ctype = get_arg()
 
 report_soma = sim.reports['soma'].filter('All')
-report_soma.trace()
+plt.figure(figsize=(9.6,7.2))
+pltreport = report_soma.trace()
 filename = Ctype+'_soma_trace.png'
+pltreport.yaxis.set_major_locator(MultipleLocator(20))
+pltreport.yaxis.set_minor_locator(MultipleLocator(5))
+pltreport.grid(True, which="major", linestyle='-.')
+pltreport.grid(True, which="minor", linestyle=':')
 plt.savefig(filename)
 print('Done')

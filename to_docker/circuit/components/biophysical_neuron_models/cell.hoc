@@ -1,0 +1,429 @@
+/*
+Model by Stefano Masoli PhD
+Parameter tuning differentiates granule cell subtypes enriching the repertoire of retransmission properties at the cerebellum input stage
+Stefano Masoli, Marialuisa Tognolina, Umberto Laforenza, Francesco Moccia, Egidio D’Angelo
+bioRxiv 638247; doi: https://doi.org/10.1101/638247
+*/
+{load_file("stdrun.hoc")}
+{load_file("import3d.hoc")}
+
+begintemplate cell
+  public init, morphology, geom_nseg_fixed, geom_nsec, gid
+  public channel_seed, channel_seed_set
+  public soma, dend, apic, axon, myelin
+  create soma[1], dend[1], apic[1], axon[1], myelin[1]
+
+  objref this, CellRef, segCounts
+
+  public all, somatic, apical, axonal, basal, myelinated, APC, Hilock, AIS, aa_axon, pf_axon_1, pf_axon_2
+  objref all, somatic, apical, axonal, basal, myelinated, APC, Hilock, AIS, aa_axon, pf_axon_1, pf_axon_2
+
+proc init(/* args: morphology_dir, morphology_name */) {
+  all = new SectionList()
+  apical = new SectionList()
+  axonal = new SectionList()
+  basal = new SectionList()
+  somatic = new SectionList()
+  myelinated = new SectionList()
+  Hilock = new SectionList()
+  AIS = new SectionList()
+  aa_axon = new SectionList()
+  pf_axon_1 = new SectionList()
+  pf_axon_2 = new SectionList() 
+
+  //gid in this case is only used for rng seeding
+  gid = 0
+
+  //For compatibility with BBP CCells
+  CellRef = this
+
+  forall delete_section()
+
+  if(numarg() >= 2) {
+    load_morphology($s1, $s2)
+  } else {
+    load_morphology("/gpfs/bbp.cscs.ch/project/proj143/test_singlecell/neurodamus-sonata-template/to_docker/circuit/components/morphologies/ascii/", "GrC2018.asc")
+    /*load_morphology($s1, "GrC2018.asc")*/
+  }
+
+  geom_nseg()
+  replace_axon()
+  insertChannel()
+  biophys()
+  access soma //added to record from the correct location
+}
+
+proc load_morphology(/* morphology_dir, morphology_name */) {localobj morph, import, sf, extension
+  strdef morph_path
+  sprint(morph_path, "%s/%s", $s1, $s2)
+
+  sf = new StringFunctions()
+  extension = new String()
+
+  sscanf(morph_path, "%s", extension.s)
+  sf.right(extension.s, sf.len(extension.s)-4)
+
+  if( strcmp(extension.s, ".asc") == 0 ) {
+    morph = new Import3d_Neurolucida3()
+  } else if( strcmp(extension.s, ".swc" ) == 0) {
+    morph = new Import3d_SWC_read()
+  } else {
+    printf("Unsupported file format: Morphology file has to end with .asc or .swc" )
+    quit()
+  }
+
+  morph.quiet = 1
+  morph.input(morph_path)
+
+  import = new Import3d_GUI(morph, 0)
+  import.instantiate(this)
+}
+
+/*
+ * Assignment of mechanism values based on distance from the soma
+ * Matches the BluePyOpt method
+ */
+proc distribute_distance(){local x localobj sl
+  strdef stmp, distfunc, mech
+
+  sl = $o1
+  mech = $s2
+  distfunc = $s3
+  this.soma[0] distance(0, 0.5)
+  sprint(distfunc, "%%s %s(%%f) = %s", mech, distfunc)
+  forsec sl for(x, 0) {
+    sprint(stmp, distfunc, secname(), x, distance(x))
+    execute(stmp)
+  }
+}
+
+proc geom_nseg() {
+  this.geom_nsec() //To count all sections
+  //TODO: geom_nseg_fixed depends on segCounts which is calculated by
+  //  geom_nsec.  Can this be collapsed?
+  this.geom_nseg_fixed(40)
+  this.geom_nsec() //To count all sections
+}
+
+proc insertChannel() {
+  forsec this.all {
+  }
+  forsec this.apical {
+  }
+  forsec this.axonal {
+  }
+  forsec this.basal {
+    insert Leak
+    insert Kca1_1
+    insert GRC_CA
+    insert Kv1_1
+    //insert cdp5_CR
+  }
+  forsec this.somatic {
+    insert Leak
+    insert GRC_CA
+    insert Kv1_1
+    insert Kv3_4
+    insert Kv4_3
+    insert Kir2_3
+    insert Kv1_5
+    insert Kv2_2_0010
+    //insert cdp5_CR
+  }
+  forsec this.myelinated {
+  }
+  forsec this.pf_axon_1 {
+    insert Leak
+    insert GRC_CA
+    //insert GRC_NA
+    insert Kv3_4
+    //insert cdp5_CR
+  }
+  forsec this.AIS {
+    insert Leak
+    insert GRC_CA
+    //insert GRC_NA_FHF
+    insert Kv3_4
+    insert GRC_KM
+    //insert cdp5_CR
+  }
+  forsec this.Hilock {
+    insert Leak
+    insert GRC_CA
+    //insert GRC_NA_FHF
+    insert Kv3_4
+    //insert cdp5_CR
+  }
+  forsec this.pf_axon_2 {
+    insert Leak
+    insert GRC_CA
+    //insert GRC_NA
+    insert Kv3_4
+    //insert cdp5_CR
+  }
+  forsec this.aa_axon {
+    insert Leak
+    insert GRC_CA
+    //insert GRC_NA
+    insert Kv3_4
+    //insert cdp5_CR
+  }
+}
+
+proc biophys() {
+  
+  forsec CellRef.all {
+  }
+  
+  forsec CellRef.apical {
+  }
+  
+  forsec CellRef.axonal {
+  }
+  
+  forsec CellRef.basal {
+    cm = 2.5
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 0.00015
+    gbar_Kca1_1 = 0.010018074546510001
+    gcabar_GRC_CA = 0.0050012800845900002
+    gbar_Kv1_1 = 0.00381819207934
+  }
+  
+  forsec CellRef.somatic {
+    cm = 2
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 0.00015
+    gkbar_Kv3_4 = 0.00076192450951999995
+    gkbar_Kv4_3 = 0.0028149683906099998
+    gkbar_Kir2_3 = 0.00074725514701999996
+    gcabar_GRC_CA = 0.00060938071783999998
+    gbar_Kv1_1 = 0.0056973826455499997
+    gKur_Kv1_5 = 0.00083407556713999999
+    gKv2_2bar_Kv2_2_0010 = 1.203410852e-05
+  }
+  
+  forsec CellRef.myelinated {
+  }
+  
+  forsec CellRef.pf_axon_1 {
+    cm = 1
+    ena = 87.390000000000001
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 3.5301616000000001e-07
+    //gnabar_GRC_NA = 0.017718484492610001
+    gkbar_Kv3_4 = 0.0081756804703699993
+    gcabar_GRC_CA = 0.00020856833529999999
+  }
+  
+  forsec CellRef.AIS {
+    cm = 1
+    ena = 87.390000000000001
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 0.00015
+    //gnabar_GRC_NA_FHF = 1.28725006737226
+    gkbar_Kv3_4 = 0.0064959534065400001
+    gcabar_GRC_CA = 0.00031198539471999999
+    gkbar_GRC_KM = 0.00056671971737000002
+  }
+  
+  forsec CellRef.Hilock {
+    cm = 2
+    ena = 87.390000000000001
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 0.00015
+    //gnabar_GRC_NA_FHF = 0.0092880585146199995
+    gkbar_Kv3_4 = 0.020373463109149999
+    gcabar_GRC_CA = 0.00057726155447
+  }
+  
+  forsec CellRef.pf_axon_2 {
+    cm = 1
+    ena = 87.390000000000001
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 3.5301616000000001e-07
+    //gnabar_GRC_NA = 0.017718484492610001
+    gkbar_Kv3_4 = 0.0081756804703699993
+    gcabar_GRC_CA = 0.00020856833529999999
+  }
+  
+  forsec CellRef.aa_axon {
+    cm = 1
+    ena = 87.390000000000001
+    ek = -88
+    e_Leak = -60
+    eca = 137.5
+    Ra = 100
+    gmax_Leak = 9.3640921249999996e-05
+    //gnabar_GRC_NA = 0.026301636815019999
+    gkbar_Kv3_4 = 0.00237386061632
+    gcabar_GRC_CA = 0.00068197420273000001
+  }
+  
+}
+
+func sec_count(/* SectionList */) { local nSec
+  nSec = 0
+  forsec $o1 {
+      nSec += 1
+  }
+  return nSec
+}
+
+/*
+ * Iterate over the section and compute how many segments should be allocate to
+ * each.
+ */
+proc geom_nseg_fixed(/* chunkSize */) { local secIndex, chunkSize
+  chunkSize = $1
+  soma area(.5) // make sure diam reflects 3d points
+  secIndex = 0
+  forsec all {
+    nseg = 1 + 2*int(L/chunkSize)
+    segCounts.x[secIndex] = nseg
+    secIndex += 1
+  }
+}
+
+/*
+ * Count up the number of sections
+ */
+proc geom_nsec() { local nSec
+  nSecAll = sec_count(all)
+  nSecSoma = sec_count(somatic)
+  nSecApical = sec_count(apical)
+  nSecBasal = sec_count(basal)
+  nSecMyelinated = sec_count(myelinated)
+  nSecAxonalOrig = nSecAxonal = sec_count(axonal)
+
+  segCounts = new Vector()
+  segCounts.resize(nSecAll)
+  nSec = 0
+  forsec all {
+    segCounts.x[nSec] = nseg
+    nSec += 1
+  }
+}
+
+/*
+ * Replace the axon built from the original morphology file with a stub axon
+ */
+    
+proc replace_axon(){ local nSec, D1, D2
+  // preserve the number of original axonal sections
+  nSec = sec_count(axonal)
+
+  // get rid of the old axon
+  forsec axonal{
+    delete_section()
+  }
+
+  create axon[312]
+
+  access axon[0] { //1
+    L = 1
+    diam = 1.5
+    nseg = 1
+    pt3dadd(0.0, -5.62232, 0.0, diam)
+    pt3dadd(0.0, -6.62232, 0.0, diam)
+    all.append()
+    axonal.append()
+    Hilock.append()
+  }
+  access axon[1] { //1
+    L = 10
+    diam = 0.7
+    nseg = 1
+    pt3dadd(0.0, -6.62232, 0.0, diam)
+    pt3dadd(0.0, -16.62232, 0.0, diam)
+    all.append()
+    axonal.append()
+    AIS.append()
+  }
+  for i=2, 19 { //18
+    access axon[i] {
+    L = 7
+    diam = 0.3
+    nseg = 1
+    all.append()
+    
+    len_ini = -16.62232
+    len_end = -7
+    
+    pt3dadd(0.0, len_ini, 0.0, diam)
+    pt3dadd(0.0, len_ini + len_end, 0.0, diam)
+    axonal.append()
+    aa_axon.append()
+    }
+    len_ini = len_ini + len_end
+  }
+  for i=20, 165 { //145
+    len_ini = -142.62232
+    len_end = 7
+    access axon[i] {
+    L = 7
+    diam = 0.15
+    nseg = 1
+    
+
+    
+    pt3dadd(len_ini, len_ini , 0.0, diam)
+    pt3dadd(len_ini + len_end, len_ini , 0.0, diam)
+    
+
+    all.append()
+    axonal.append()
+    pf_axon_1.append()
+   }
+    len_ini = len_ini + len_end
+  }
+  for i=166, 311 { // 145
+    len_ini_2 = -142.62232
+    len_end_2 = 7
+    access axon[i] {
+    L = 7
+    diam = 0.15
+    nseg = 1
+    pt3dadd(len_ini_2, len_ini_2 , 0.0, diam)
+    pt3dadd(len_ini_2 - len_end_2, len_ini_2 , 0.0, diam)
+    all.append()
+    axonal.append()
+    pf_axon_2.append()
+   }
+    len_ini_2 = len_ini_2 - len_end_2
+  }
+  nSecAxonal = 312
+  soma[0] connect axon[0](1), 0
+  axon[0] connect axon[1](1), 0
+  axon[1] connect axon[2](1), 0
+  for i=2, 20 {
+      axon[i] connect axon[i+1](1), 0
+  }    
+  for i=21, 164 {
+      axon[i] connect axon[i+1](1), 0
+  }   
+  for i=166, 310 {
+      axon[i] connect axon[i+1](1), 0
+    }
+  axon[19] connect axon[166](1), 0
+}
+
+endtemplate cell

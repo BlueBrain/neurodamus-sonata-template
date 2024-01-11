@@ -1,0 +1,296 @@
+./ALU.cpp: ../cerebellum/mod//ALU.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ALU.mod" -o "/mnt/mydata/x86_64")
+
+./ALU.o: ./ALU.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./CoreNEURONArtificialCell.cpp: ../cerebellum/mod//CoreNEURONArtificialCell.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "CoreNEURONArtificialCell.mod" -o "/mnt/mydata/x86_64")
+
+./CoreNEURONArtificialCell.o: ./CoreNEURONArtificialCell.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./GRC_CA.cpp: ../cerebellum/mod//GRC_CA.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "GRC_CA.mod" -o "/mnt/mydata/x86_64")
+
+./GRC_CA.o: ./GRC_CA.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./GRC_KM.cpp: ../cerebellum/mod//GRC_KM.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "GRC_KM.mod" -o "/mnt/mydata/x86_64")
+
+./GRC_KM.o: ./GRC_KM.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Gfluct.cpp: ../cerebellum/mod//Gfluct.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Gfluct.mod" -o "/mnt/mydata/x86_64")
+
+./Gfluct.o: ./Gfluct.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./GluSynapse.cpp: ../cerebellum/mod//GluSynapse.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "GluSynapse.mod" -o "/mnt/mydata/x86_64")
+
+./GluSynapse.o: ./GluSynapse.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./HDF5reader.cpp: ../cerebellum/mod//HDF5reader.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "HDF5reader.mod" -o "/mnt/mydata/x86_64")
+
+./HDF5reader.o: ./HDF5reader.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kca11.cpp: ../cerebellum/mod//Kca11.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kca11.mod" -o "/mnt/mydata/x86_64")
+
+./Kca11.o: ./Kca11.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kca22.cpp: ../cerebellum/mod//Kca22.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kca22.mod" -o "/mnt/mydata/x86_64")
+
+./Kca22.o: ./Kca22.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kir23.cpp: ../cerebellum/mod//Kir23.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kir23.mod" -o "/mnt/mydata/x86_64")
+
+./Kir23.o: ./Kir23.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kv11.cpp: ../cerebellum/mod//Kv11.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kv11.mod" -o "/mnt/mydata/x86_64")
+
+./Kv11.o: ./Kv11.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kv15.cpp: ../cerebellum/mod//Kv15.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kv15.mod" -o "/mnt/mydata/x86_64")
+
+./Kv15.o: ./Kv15.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kv22.cpp: ../cerebellum/mod//Kv22.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kv22.mod" -o "/mnt/mydata/x86_64")
+
+./Kv22.o: ./Kv22.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kv34.cpp: ../cerebellum/mod//Kv34.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kv34.mod" -o "/mnt/mydata/x86_64")
+
+./Kv34.o: ./Kv34.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Kv43.cpp: ../cerebellum/mod//Kv43.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Kv43.mod" -o "/mnt/mydata/x86_64")
+
+./Kv43.o: ./Kv43.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Leak.cpp: ../cerebellum/mod//Leak.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Leak.mod" -o "/mnt/mydata/x86_64")
+
+./Leak.o: ./Leak.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ProbAMPANMDA_EMS.cpp: ../cerebellum/mod//ProbAMPANMDA_EMS.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ProbAMPANMDA_EMS.mod" -o "/mnt/mydata/x86_64")
+
+./ProbAMPANMDA_EMS.o: ./ProbAMPANMDA_EMS.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ProbGABAAB_EMS.cpp: ../cerebellum/mod//ProbGABAAB_EMS.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ProbGABAAB_EMS.mod" -o "/mnt/mydata/x86_64")
+
+./ProbGABAAB_EMS.o: ./ProbGABAAB_EMS.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SonataReportHelper.cpp: ../cerebellum/mod//SonataReportHelper.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SonataReportHelper.mod" -o "/mnt/mydata/x86_64")
+
+./SonataReportHelper.o: ./SonataReportHelper.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SonataReports.cpp: ../cerebellum/mod//SonataReports.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SonataReports.mod" -o "/mnt/mydata/x86_64")
+
+./SonataReports.o: ./SonataReports.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SpikeWriter.cpp: ../cerebellum/mod//SpikeWriter.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SpikeWriter.mod" -o "/mnt/mydata/x86_64")
+
+./SpikeWriter.o: ./SpikeWriter.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./SynapseReader.cpp: ../cerebellum/mod//SynapseReader.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "SynapseReader.mod" -o "/mnt/mydata/x86_64")
+
+./SynapseReader.o: ./SynapseReader.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ThreshDetect.cpp: ../cerebellum/mod//ThreshDetect.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ThreshDetect.mod" -o "/mnt/mydata/x86_64")
+
+./ThreshDetect.o: ./ThreshDetect.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./VecStim.cpp: ../cerebellum/mod//VecStim.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "VecStim.mod" -o "/mnt/mydata/x86_64")
+
+./VecStim.o: ./VecStim.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ampanmda.cpp: ../cerebellum/mod//ampanmda.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ampanmda.mod" -o "/mnt/mydata/x86_64")
+
+./ampanmda.o: ./ampanmda.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./distrt.cpp: ../cerebellum/mod//distrt.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "distrt.mod" -o "/mnt/mydata/x86_64")
+
+./distrt.o: ./distrt.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./fi.cpp: ../cerebellum/mod//fi.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "fi.mod" -o "/mnt/mydata/x86_64")
+
+./fi.o: ./fi.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./fi_stdp.cpp: ../cerebellum/mod//fi_stdp.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "fi_stdp.mod" -o "/mnt/mydata/x86_64")
+
+./fi_stdp.o: ./fi_stdp.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./gap.cpp: ../cerebellum/mod//gap.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "gap.mod" -o "/mnt/mydata/x86_64")
+
+./gap.o: ./gap.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kamt.cpp: ../cerebellum/mod//kamt.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kamt.mod" -o "/mnt/mydata/x86_64")
+
+./kamt.o: ./kamt.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdrmt.cpp: ../cerebellum/mod//kdrmt.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdrmt.mod" -o "/mnt/mydata/x86_64")
+
+./kdrmt.o: ./kdrmt.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ks.cpp: ../cerebellum/mod//ks.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ks.mod" -o "/mnt/mydata/x86_64")
+
+./ks.o: ./ks.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./lookupTableV2.cpp: ../cerebellum/mod//lookupTableV2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "lookupTableV2.mod" -o "/mnt/mydata/x86_64")
+
+./lookupTableV2.o: ./lookupTableV2.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./naxn.cpp: ../cerebellum/mod//naxn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "naxn.mod" -o "/mnt/mydata/x86_64")
+
+./naxn.o: ./naxn.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./netstim_inhpoisson.cpp: ../cerebellum/mod//netstim_inhpoisson.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "netstim_inhpoisson.mod" -o "/mnt/mydata/x86_64")
+
+./netstim_inhpoisson.o: ./netstim_inhpoisson.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./orn.cpp: ../cerebellum/mod//orn.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "orn.mod" -o "/mnt/mydata/x86_64")
+
+./orn.o: ./orn.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ostimhelper.cpp: ../cerebellum/mod//ostimhelper.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../cerebellum/mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ostimhelper.mod" -o "/mnt/mydata/x86_64")
+
+./ostimhelper.o: ./ostimhelper.cpp
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(CXXCOMPILE) -I"../cerebellum/mod" $(INCLUDES) -fPIC -c $< -o $@
+

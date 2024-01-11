@@ -10,9 +10,6 @@
     "conditions": {
         "extracellular_calcium": 2.0,
         "mechanisms": {
-            "ProbAMPANMDA_EMS": {},
-            "ProbGABAAB_EMS": {},
-            "GluSynapse": {}
         }
     },
     "network": "/mnt/mydata/circuit/circuit_config.json",

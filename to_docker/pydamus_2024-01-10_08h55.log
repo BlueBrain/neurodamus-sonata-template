@@ -1,0 +1,67 @@
+[[39;1mSTEP[0m] (Jan.10 08:55:11) [39;1mInitializing Neurodamus... Logfile: pydamus_2024-01-10_08h55.log[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => Neurodamus Mod & Hoc lib loaded.[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mChecking for plugins...[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => Engines Available: ['Base', 'NGV', 'METype'][0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m  : Connections Types: ['NeuroGlial', 'GlioVascular', None, 'Synaptic', 'GapJunction', 'NeuroModulation'][0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mSetting up Neurodamus configuration[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mInitializing Simulation Configuration and Validation[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mChecking simulation requirements[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mInitializing hoc config objects[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mUser-defined RNG base seed 20.0[0m
+[[33mWARNING[0m] (Jan.10 08:55:12) [33mSome node set rules were replaced from /mnt/mydata/circuit/node_sets.json[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mMemusage (RSS) per task [MB]: Max=74.47, Min=74.47, Mean(Stdev)=74.47(0.00)[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mChecking Connection Configurations[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => CHECK No Global vars![0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => CHECK No Block Overrides![0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => CHECK No single Weight=0 blocks![0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1m================ CALCULATING LOAD BALANCE ================[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mComputing Load Balance[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mActivating experimental LB for Sonata circuit 'popA'[0m
+[[33mWARNING[0m] (Jan.10 08:55:12) [33mLoad Balance AUTO-SELECTED: RoundRobin. Reason: Single rank - not worth using Load Balance[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mMemusage (RSS) per task [MB]: Max=78.32, Min=78.32, Mean(Stdev)=78.32(0.00)[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1m==================== BUILDING CIRCUIT ====================[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mLOADING NODES[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mLoad-balance object not present. Continuing Round-Robin...[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => (default) Circuit has been disabled[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mCircuit popA[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mReading Nodes (METype) info from '/mnt/mydata/circuit/nodes.h5'[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m -> Distributing 'popA:All' target cells Round-Robin[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m => Loaded info about 1 target cells (out of 1)[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mFINALIZING CIRCUIT CELLS[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mCircuit (default)[0m
+[[39;1mSTEP[0m] (Jan.10 08:55:12) [39;1mCircuit popA[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39mFinalizing cells... Gid offset: 0[0m
+[[34mINFO[0m] (Jan.10 08:55:12) [39m > Instantiating cells... (1 in Rank 0)[0m
+[[31mCRITICAL[0m] (Jan.10 08:55:12) (rank 0) [31m(rank 0) Unhandled Exception. Terminating...[0m
+Traceback (most recent call last):
+  File "/opt/software/neurodamus/neurodamus/commands.py", line 75, in neurodamus
+    Neurodamus(config_file, True, logging_level=log_level, **options).run()
+  File "/opt/software/neurodamus/neurodamus/node.py", line 1739, in __init__
+    self._instantiate_simulation()
+  File "/opt/software/neurodamus/neurodamus/node.py", line 1840, in _instantiate_simulation
+    self._build_model()
+  File "/opt/software/neurodamus/neurodamus/node.py", line 1755, in _build_model
+    self.create_cells(load_bal)
+  File "/opt/software/neurodamus/neurodamus/core/_utils.py", line 35, in mpi_ok_wrapper
+    res = f(*args, **kw)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/opt/software/neurodamus/neurodamus/node.py", line 484, in create_cells
+    cell_manager.finalize()
+  File "/opt/software/neurodamus/neurodamus/cell_distributor.py", line 265, in finalize
+    self._instantiate_cells(**opts)
+  File "/opt/software/neurodamus/neurodamus/cell_distributor.py", line 583, in _instantiate_cells
+    super()._instantiate_cells(CellType, **opts)
+  File "/opt/software/neurodamus/neurodamus/core/_utils.py", line 35, in mpi_ok_wrapper
+    res = f(*args, **kw)
+  File "/opt/software/neurodamus/neurodamus/cell_distributor.py", line 285, in _instantiate_cells
+    cell = CellType(gid, cell_info, self._circuit_conf)
+  File "/opt/software/neurodamus/neurodamus/metype.py", line 148, in __init__
+    super().__init__(gid, mepath, meinfo.emodel_tpl, morpho_path, meinfo, detailed_axon)
+  File "/opt/software/neurodamus/neurodamus/metype.py", line 74, in __init__
+    self._instantiate_cell(gid, etype_path, emodel, morpho_path, meinfos, detailed_axon)
+  File "/opt/software/neurodamus/neurodamus/metype.py", line 154, in _instantiate_cell
+    EModel = getattr(Nd, emodel)
+  File "/opt/software/neurodamus/neurodamus/core/_neuron.py", line 122, in __getattr__
+    obj = getattr(self._h, item)
+AttributeError: 'hoc.HocObject' object has no attribute 'cell'

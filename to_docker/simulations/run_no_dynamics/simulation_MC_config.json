@@ -5,9 +5,11 @@
     "run": {
         "random_seed": 20,
         "dt": 0.025,
-        "tstop": 500.0
+        "tstop": 5500.0
     },
     "conditions": {
+        "v_init": -60.0,
+        "celsius": 35.0,
         "extracellular_calcium": 2.0,
         "mechanisms": {
         }
@@ -24,10 +26,10 @@
             "node_set": "All",
             "input_type": "current_clamp",
             "module": "noise",
-            "mean": 0.80,
+            "mean": 0.22,
             "variance": 0.0,
-            "delay": 300.0,
-            "duration": 100.0
+            "delay": 1000.0,
+            "duration": 4300.0
         }
     },
     "reports": {
@@ -38,7 +40,7 @@
             "unit": "mV",
             "dt": 0.025,
             "start_time": 0.0,
-            "end_time": 500.0
+            "end_time": 5500.0
         }
     }
 }

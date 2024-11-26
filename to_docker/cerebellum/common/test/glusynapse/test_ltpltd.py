@@ -86,7 +86,7 @@ class TestLTPLTD(object):
         tnp = t.as_numpy()
         npt.assert_almost_equal(rhonp[-1], target_rho, decimal=3)
         npt.assert_almost_equal(
-            np.std(rhonp[np.searchsorted(tnp, 1500): -1]), 0, decimal=3
+            np.std(rhonp[np.searchsorted(tnp, 1500) : -1]), 0, decimal=3
         )
 
     def test_generator_steady_state_rho(self):
@@ -94,9 +94,7 @@ class TestLTPLTD(object):
         Use_vec = [0.1, 0.5, 0.9]
         theta_vec = [0, np.inf]
 
-        for Use, gamma_d, theta in product(
-            Use_vec, gamma_d_vec, theta_vec
-        ):
+        for Use, gamma_d, theta in product(Use_vec, gamma_d_vec, theta_vec):
             yield self.steady_state_rho, Use, gamma_d, theta
 
     def use_convergence(self, rho_GB, Use):
@@ -152,7 +150,9 @@ class TestLTPLTD(object):
             plt.show()
         # Test
         gnp = g.as_numpy()
-        gmax_target = self.syn.gmax_d_AMPA + rho_GB * (self.syn.gmax_p_AMPA - self.syn.gmax_d_AMPA)
+        gmax_target = self.syn.gmax_d_AMPA + rho_GB * (
+            self.syn.gmax_p_AMPA - self.syn.gmax_d_AMPA
+        )
         npt.assert_almost_equal(gnp[-1], gmax_target, decimal=2)
 
     def test_convergence(self):
@@ -160,12 +160,8 @@ class TestLTPLTD(object):
         Use_vec = [0.0, 0.05, 0.1, 0.15, 0.5, 0.85, 0.95, 1.00]
         gmax0_AMPA_vec = [0.0, 0.25, 1.00, 1.25, 2.0, 2.75, 3.00, 3.75, 4.00]
 
-        for rho_GB, Use in product(
-            rho_GB_vec, Use_vec
-        ):
+        for rho_GB, Use in product(rho_GB_vec, Use_vec):
             yield self.use_convergence, rho_GB, Use
 
-        for rho_GB, gmax0_AMPA in product(
-            rho_GB_vec, gmax0_AMPA_vec
-        ):
+        for rho_GB, gmax0_AMPA in product(rho_GB_vec, gmax0_AMPA_vec):
             yield self.gmax_convergence, rho_GB, gmax0_AMPA

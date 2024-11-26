@@ -84,6 +84,7 @@ class TestTransmission(object):
             neuron.run(200.0)
             if DEBUG:
                 import matplotlib.pyplot as plt
+
                 fig, ax = plt.subplots()
                 ax.plot(t, g)
                 plt.show()
@@ -142,7 +143,9 @@ class TestTransmission(object):
                 tspike
                 + (neuron.h.tau_r_NMDA_GluSynapse * neuron.h.tau_d_NMDA_GluSynapse)
                 / (neuron.h.tau_d_NMDA_GluSynapse - neuron.h.tau_r_NMDA_GluSynapse)
-                * np.log(neuron.h.tau_d_NMDA_GluSynapse / neuron.h.tau_r_NMDA_GluSynapse)
+                * np.log(
+                    neuron.h.tau_d_NMDA_GluSynapse / neuron.h.tau_r_NMDA_GluSynapse
+                )
                 + netCon.delay
             )
             npt.assert_almost_equal(tpeak, tpeak_expected, decimal=1)
